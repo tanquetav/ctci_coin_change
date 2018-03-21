@@ -1,0 +1,10 @@
+Build the Kotlin application with. You must use java 1.8.
+./gradlew jar
+or
+gradlew.bat jar
+
+To run use:
+java -jar build/libs/ctci-0.0.1.jar
+
+The solution is implemented in Kotlin using only Java/Kotlin standard library.
+It uses A* algorithm to find all coin changes
