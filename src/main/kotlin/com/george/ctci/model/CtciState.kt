@@ -3,12 +3,12 @@ package com.george.ctci.model
 import java.util.*
 
 /**
- * Represents a system state, with the list of trucks and the list of cargos. The with* methods clone the object
+ * Represents a system state, with the change, list of coins and the list of coins use . The with* methods clone the object
  * using a shallow copy strategy, creating a new list, changing only the selected element, reusing the
  * others (immutability)
  * The heuristic function is implemented in each state. H = F + G
- * F is the sum of distance of the trucks that already collected cargo in this state
- * G is expectation of distance of the nearest trucks of uncollected cargo in this state
+ * F is the 
+ * G is expectation 
  */
 data class CtciState(
         val change:Int,
@@ -82,7 +82,7 @@ data class CtciState(
     }
 
     /**
-     * Estimated G, using the nearest truck of uncollected cargo
+     * Estimated G, 
      */
     fun calculateG(): CtciState {
         g=0.0
@@ -90,7 +90,7 @@ data class CtciState(
     }
 
     /**
-     * Sucessor of this state. For each cargo not collected, find some trucks to collect
+     * Sucessor of this state.  Add a coin and check if it overflow change
      */
     fun successors() :List<CtciState> {
         val lstSucessors = mutableListOf<CtciState>()

@@ -4,8 +4,8 @@ import com.george.ctci.model.CtciState
 
 /**
  * A* algorithm implementation
- * Try to search best the solution. Starting with initial state, successors call change one truck collecting one cargo
- * to successor states. This new states are put in openSet and a new state is selected using the Heuristic Function
+ * Try to search best the solution. Starting with initial state, successors call add one valid coin to 
+ * to successor states. This new states are put in openSet and a new state is selected without using the Heuristic Function
  */
 class AStar (val ctciState: CtciState) {
     /**
@@ -18,8 +18,7 @@ class AStar (val ctciState: CtciState) {
     var openSet = mutableListOf<CtciState>()
     /**
      * graph of pair of states representing where each state came from
-     * Not used in this case, because the solution state already
-     * have the information of which truck collected each cargo
+     * Not used in this case, 
      */
     var cameFrom = mutableMapOf<CtciState, CtciState>()
 
@@ -38,12 +37,8 @@ class AStar (val ctciState: CtciState) {
                     .first()
             openSet.remove(currentNode)
             closedSet.add(currentNode)
-//            var ss2 = ""
-//            currentNode.cargos.forEach {
-//                ss2+=it.delivered
-//            }
 
-            // If this is the solution , all cargos collected
+            // If this is the solution 
             if ( currentNode.isSolution() ) {
 //                return currentNode
  // Used to check all solutions  in debug
